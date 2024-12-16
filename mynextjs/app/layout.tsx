@@ -20,9 +20,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  profile
 }: Readonly<{
   children: React.ReactNode;
+  profile: React.ReactNode
 }>) {
+  const isAdmin = true
   return (
     <html lang="en">
       <body
@@ -36,6 +39,7 @@ export default function RootLayout({
             <Link href={"/about"}>About</Link>
           </ul>
         </nav>
+        {isAdmin && profile}
         {children}
       </body>
     </html>
